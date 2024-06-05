@@ -1,0 +1,10 @@
+{
+  "development": {
+    "username": "postgres",
+    "password": "postgres",
+    "database": "game-docker",
+    "host": "localhost",
+    "dialect": "postgres",
+    "port": "5432"
+  }
+}
