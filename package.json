@@ -2,6 +2,7 @@
   "scripts": {
     "dev": "nodemon ./bin/www.js",
     "test": "NODE_ENV=test jest --detectOpenHandles --runInBand --forceExit --coverage --verbose --watchAll",
+    "ci-test": "NODE_ENV=test jest --detectOpenHandles --runInBand --forceExit --coverage --verbose",
     "docker": "npx sequelize-cli db:create && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && node ./bin/www.js"
   },
   "dependencies": {
