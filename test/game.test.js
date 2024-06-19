@@ -117,6 +117,32 @@ describe('GET Games', () => {
     })
 })
 
+describe('CREATE GAME', () => {
+
+    it('Create Game', (done) => {
+
+        request(app)
+            .post(`/games`)
+            .send({
+                title: 'DDD',
+                developer: 'DDD',
+                year: 2020,
+                genres: 'Action RPG'
+            })
+            .expect('Content-Type', /json/)
+            .expect(201)
+            .then((response) => {
+                const {message} = response.body;
+
+                expect(message).toBe("Game created successfully");
+                done()
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    })
+})
+
 describe('DELETE GAME', () => {
 
 

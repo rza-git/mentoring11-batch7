@@ -29,6 +29,23 @@ const findOne = async (req, res, next) => {
     }
 }
 
+const create = async (req, res, next) => {
+    try {
+        const {title, developer, year, genres} = req.body;
+
+        const game = await Game.create({
+            title,
+            developer,
+            year,
+            genres
+        })
+
+        res.status(201).json({message: "Game created successfully"})
+    } catch(err) {
+        next(err);
+    }
+}
+
 const destroy = async (req, res, next) => {
     try {
         const {id} = req.params;
@@ -52,5 +69,6 @@ const destroy = async (req, res, next) => {
 module.exports = {
     findAll,
     findOne,
-    destroy
+    destroy,
+    create
 }
