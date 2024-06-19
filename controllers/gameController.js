@@ -29,7 +29,28 @@ const findOne = async (req, res, next) => {
     }
 }
 
+const destroy = async (req, res, next) => {
+    try {
+        const {id} = req.params;
+
+        const game = await Game.findOne({
+            where: {
+                id
+            }
+        })
+
+        if(!game) 
+            throw {name: "ErrorNotFound"}
+
+        await game.destroy();
+        res.status(200).json({message: "Game deleted successfully"})
+    } catch(err) {
+        next(err);
+    }
+}
+
 module.exports = {
     findAll,
-    findOne
+    findOne,
+    destroy
 }

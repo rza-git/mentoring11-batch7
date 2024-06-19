@@ -117,5 +117,27 @@ describe('GET Games', () => {
     })
 })
 
+describe('DELETE GAME', () => {
+
+
+    it('Delete Game', (done) => {
+
+        request(app)
+            .delete(`/games/${1003}`)
+            .expect('Content-Type', /json/)
+            .expect(200)
+            .then((response) => {
+                const {message} = response.body;
+
+                
+                expect(message).toBe("Game deleted successfully")
+                done()
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    })
+})
+
 
 

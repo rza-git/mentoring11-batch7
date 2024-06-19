@@ -49,5 +49,16 @@ CD => continuous deployment
 
 
 
+Pengunaan Unit Testing
+
+
+Fitur A ==> 100 %
+Fitur B ==> 100 %
+Fitur C ==> 50 %
+
+Fitur D ==> 100 %
+
+
+
 
 
